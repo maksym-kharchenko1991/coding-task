@@ -67,8 +67,8 @@ export default {
     data() {
         return {
             articles: window.LATEST_ARTICLES,
-            showNews: true,
-            showEssay: true
+            showOnlyNews: false,
+            showOnlyEssay: false
         }
     },
     computed: {
@@ -78,8 +78,8 @@ export default {
 
             const filtered = this.articles.filter(item => {
                 const itemDate = new Date(item.publishDate);
-                return ((this.showNews && item.category === 'news') ||
-                    (this.showEssay && item.category === 'essay')) &&
+                return ((!this.showOnlyNews && item.category !== 'news') ||
+                    (!this.showOnlyEssay && item.category !== 'essay')) &&
                     (itemDate >= currentDate);
             })
 
@@ -104,11 +104,11 @@ export default {
     <div class="wrapper">
         <h2>Latest Updates</h2>
         <div class="pagesList">
-            <label><input type="checkbox" v-model="showNews">News</label>
-            <label><input type="checkbox" v-model="showEssay">Essay</label>
+            <label><input type="checkbox" v-model="showOnlyNews">News</label>
+            <label><input type="checkbox" v-model="showOnlyEssay">Essay</label>
             <ul>
                 <li v-for="(article) in filteredArticles.slice(0, 5)" :key="article.title">
-                    <a :href="article.url">{{ article.title }} {{ formatDate(article.publishDate) }}</a>
+                    <a :href="article.url">{{ article.title }} <span>{{ formatDate(article.publishDate) }}</span></a>
                 </li>
             </ul>
         </div>
