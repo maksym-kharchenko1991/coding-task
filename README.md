@@ -1,41 +1,21 @@
-# coding-task
+# Code Red coding task.
 
-This template should help get you started developing with Vue 3 in Vite.
+# Before start make sure you install:
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
 
-## Recommended IDE Setup
+# Installing:
+1. Using terminal enter git clone command:
+git clone https://github.com/maksym-kharchenko1991/coding-task
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+2. Choose directory with project:
+cd coding-task
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
+3. Install all dependencies:
 npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
+4. After that you can run project:
 npm run dev
-```
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+5. After that project will be available on localhost:
+e.g. http://localhost:5174/
