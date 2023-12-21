@@ -76,6 +76,9 @@ export default {
             const currentDate = new Date();
             currentDate.setDate(currentDate.getDate() - 7); 
 
+            // TODO: update filteredArticles function to work with different categories
+            // cause they may appear in the future 
+
             const filtered = this.articles.filter(item => {
                 const itemDate = new Date(item.publishDate);
                 return ((!this.showOnlyNews && item.category !== 'news') ||
@@ -108,7 +111,9 @@ export default {
             <label><input type="checkbox" v-model="showOnlyEssay">Essay</label>
             <ul>
                 <li v-for="(article) in filteredArticles.slice(0, 5)" :key="article.title">
-                    <a :href="article.url">{{ article.title }} <span>{{ formatDate(article.publishDate) }}</span></a>
+                    <a :href="article.url">
+                        <span class="title">{{ article.title }}</span>
+                        <span class="date">{{ formatDate(article.publishDate) }}</span></a>
                 </li>
             </ul>
         </div>
@@ -120,7 +125,7 @@ export default {
         margin: 30px
     }
     .pagesList {
-        width: clamp(100px, 100%, 500px);
+        width: clamp(200px, 100%, 500px);
         border: 1px solid black;
         padding: 10px;
 
@@ -128,7 +133,23 @@ export default {
             padding-left: 10px;
         }
 
-        span {
+        input {
+            margin-right: 5px;
+        }
+        .title, .date {
+             display: inline-block;
+             font-size: 22px;
+        }
+        .title {
+            width: 75%;
+            vertical-align: bottom;
+            text-overflow: ellipsis;
+            white-space: nowrap; 
+            overflow: hidden; 
+        }
+        .date {
+            width: 25%;
+            text-align: end;
             opacity: 0.5;
         }
     }

@@ -1,12 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
-  font-weight: normal;
   list-style-type: none;
   padding: 0;
-  color: black;
+  color: #000; 
   text-decoration: none;
 }
 
@@ -17,7 +18,7 @@ body {
     background-color 0.5s;
   line-height: 1.6;
   font-family:
-    Inter,
+    'Caveat', cursiv,
     -apple-system,
     BlinkMacSystemFont,
     'Segoe UI',
@@ -29,7 +30,6 @@ body {
     'Droid Sans',
     'Helvetica Neue',
     sans-serif;
-  font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
