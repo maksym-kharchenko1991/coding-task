@@ -1,9 +1,17 @@
+<script>
+import ArticleList from './components/ArticleList.vue';
 
+export default {
+	components: {
+		ArticleList
+	}
+};
+</script>
 
 <template>
-
-  <main>
-  </main>
+	<div id="app">
+		<ArticleList />
+	</div>
 </template>
 
 
